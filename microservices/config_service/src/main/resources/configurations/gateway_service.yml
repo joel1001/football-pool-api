@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    register-with-eureka: false
+
+spring:
+  application:
+    name: gateway_service
+  cloud:
+    gateway:
+      global cors:
+        corsConfigurations:
+          "[/**]":
+            allowedOrigins: "http://localhost:5173"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # - id: payments
+        #   uri: http://localhost:8090
+        #   predicates:
+        #     - Path=/widget_ai/v1/api/payments/**
+        - id: auth
+          uri: http://localhost:9090
+          predicates:
+            - Path=/widget_ai/v1/api/auth/**
+        # - id: companies
+        #   uri: http://localhost:1090
+        #   predicates:
+        #     - Path=/widget_ai/v1/api/companies/**
+        # - id: candidate
+        #   uri: http://localhost:1190
+        #   predicates:
+        #     - Path=/widget_ai/v1/api/candidates/**
+        # - id: login
+        #   uri: http://localhost:1290
+        #   predicates:
+        #     - Path=/widget_ai/v1/api/login
+        # - id: job
+        #   uri: http://localhost:1390
+        #   predicates:
+        #     - Path=/widget_ai/v1/api/jobs/**
+        # - id: interviews
+        #   uri: http://localhost:1490
+        #   predicates:
+        #     - Path=/widget_ai/v1/api/interviews/**

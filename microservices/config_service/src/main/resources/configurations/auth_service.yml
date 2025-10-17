@@ -1,0 +1,17 @@
+server:
+  port: 1290
+
+spring:
+  application:
+    name: auth_service
+  data:
+    mongodb:
+      users:
+        uri: mongodb://localhost:27017/auth_db_dev
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

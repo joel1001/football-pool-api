@@ -1,0 +1,38 @@
+To run the project, follow this order:
+
+1. Start the **Config Service** first. This provides configuration to all other microservices.
+2. Then start the **Eureka Service** (service discovery).
+3. After Eureka is running, start the **Gateway Service**.
+4. Finally, start the rest of the microservices as needed (users, interviews, jobs, etc).
+
+This order ensures that all services can register and obtain their configuration correctly.
+
+---
+
+## Microservices Overview
+
+- **Config Service**: Centralized configuration server. Supplies configuration files to all other microservices at startup.
+
+- **Eureka Service**: Service discovery. All microservices register here so they can find and communicate with each other dynamically.
+
+- **Gateway Service**: API Gateway. Routes external requests to the appropriate microservice, handles cross-cutting concerns like security, rate limiting, and CORS.
+
+- **Users Service**: Manages user accounts, authentication, and user profile data.
+
+- **Interviews Service**: Handles interview logic, including AI-driven interviews, interview scheduling, and storing interview results.
+
+- **Job Service**: Manages job postings, job details, and job-related queries.
+
+- **Companies Service**: Manages company profiles and company-related data.
+
+- **Candidate Service**: Handles candidate profiles, applications, and candidate-specific operations.
+
+- **Notifications Service**: Sends notifications (email, SMS, etc.) to users and candidates.
+
+- **Payment Service**: Manages payment processing and billing operations.
+
+- **User Feedback Service**: Collects and manages feedback from users about the platform or services.
+
+---
+
+Each microservice is independent, communicates via REST (or other protocols), and is registered/discovered through Eureka. The Gateway Service is the main entry point for external clients.

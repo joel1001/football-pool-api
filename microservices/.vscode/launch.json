@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ConfigServiceApplication",
+            "request": "launch",
+            "mainClass": "com.leon.ideas.config.config_service.ConfigServiceApplication",
+            "projectName": "config_service"
+        },
+        {
+            "type": "java",
+            "name": "EurekaServiceApplication",
+            "request": "launch",
+            "mainClass": "com.leon.ideas.eureka.eureka_service.EurekaServiceApplication",
+            "projectName": "eureka_service"
+        },
+        {
+            "type": "java",
+            "name": "GatewayServiceApplication",
+            "request": "launch",
+            "mainClass": "com.leon.ideas.gateway.gateway_service.GatewayServiceApplication",
+            "projectName": "gateway_service"
+        },
+        {
+            "type": "java",
+            "name": "AuthServiceApplication",
+            "request": "launch",
+            "mainClass": "com.leon.ideas.auth.AuthServiceApplication",
+            "projectName": "auth_service"
+        },
+    ]
+}
